@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+	<head>
+		<title>freezing-octo-batman</title>
+
+		<style type="text/css">
+		p {
+			color: orchid
+		}
+		</style>
+	</head>
+
+	<body>
+		<p>Guess a number between 1 and 10</p>
+		<input id='guess'>
+		<button onclick='clicked()'>Guess</button>
+		<p id='result'></p>
+
+		<script>
+		var answer = Math.floor( Math.random() * 10 ) +1;
+
+		function clicked () {
+			var guess = document.getElementById( 'guess' );
+			var result = document.getElementById( 'result' );
+
+			var value = parseInt( guess.value );
+
+			if ( guess.value == answer ) {
+					result.innerHTML = 'you got it!';
+			}
+			else if ( guess.value < answer ) {
+					result.innerHTML = 'too low';
+			}
+			else {
+					result.innerHTML = 'too high';
+			}
+
+		}
+		</script>
+	</body>
+</html>
